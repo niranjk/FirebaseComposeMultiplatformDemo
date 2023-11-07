@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    id("com.google.gms.google-services") // This line to add the google-services
 }
 
 kotlin {
@@ -36,6 +37,7 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(project.dependencies.platform("com.google.firebase:firebase-bom:30.0.1")) // Add this line to add the firebase bom
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -88,6 +90,7 @@ android {
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
+        implementation("com.google.firebase:firebase-common-ktx:20.3.3") // Add this line
     }
 }
 
