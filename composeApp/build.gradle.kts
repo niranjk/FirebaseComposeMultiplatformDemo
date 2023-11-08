@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     id("com.google.gms.google-services") // This line to add the google-services
+    kotlin("plugin.serialization") version "1.9.0" // Add this lines
 }
 
 kotlin {
@@ -49,6 +50,9 @@ kotlin {
             implementation(compose.material)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
+            implementation("dev.gitlive:firebase-firestore:1.10.4") // Add this line
+            implementation("dev.gitlive:firebase-common:1.10.4")// Add this line
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1") // Add this line
         }
     }
 }
