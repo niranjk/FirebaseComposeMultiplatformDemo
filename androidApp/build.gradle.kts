@@ -19,12 +19,12 @@ kotlin {
 
 android {
     compileSdk = (findProperty("android.compileSdk") as String).toInt()
-    namespace = "kmp.niranjan.khatri.firebase.compose.demo"
+    namespace = "com.firebasecomposemultiplatform"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
-        applicationId = "kmp.niranjan.khatri.firebase.compose.demo"
+        applicationId = "com.firebasecomposemultiplatform"
         minSdk = (findProperty("android.minSdk") as String).toInt()
         targetSdk = (findProperty("android.targetSdk") as String).toInt()
         versionCode = 1
@@ -36,6 +36,15 @@ android {
     }
     kotlin {
         jvmToolchain(17)
+    }
+    buildTypes {
+        debug {
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+        release {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
     }
 }
 

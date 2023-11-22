@@ -1,4 +1,4 @@
-rootProject.name = "MyApplication"
+rootProject.name = "ComposeMultiPlatformTutorial"
 
 include(":androidApp")
 include(":shared")
@@ -24,6 +24,8 @@ pluginManagement {
         id("com.android.library").version(agpVersion)
 
         id("org.jetbrains.compose").version(composeVersion)
+        id("com.android.library") version "8.1.1"
+        id("org.jetbrains.kotlin.android") version "1.9.10"
     }
 }
 

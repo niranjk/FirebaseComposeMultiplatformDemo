@@ -1,4 +1,4 @@
-package kmp.niranjan.khatri.firebase.compose.demo
+package com.firebasecomposemultiplatform
 
 import MainView
 import android.os.Bundle

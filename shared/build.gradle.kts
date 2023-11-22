@@ -1,7 +1,7 @@
 plugins {
-    kotlin("multiplatform")
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.jetbrainsCompose)
     id("com.android.library")
-    id("org.jetbrains.compose")
     kotlin("plugin.serialization") version "1.9.0" // serialization plugin
 }
 
@@ -27,12 +27,14 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                // GitLive : Firebase Multiplatform Library
                 implementation("dev.gitlive:firebase-firestore:1.10.4") // gitlive
                 implementation("dev.gitlive:firebase-common:1.10.4")// gitlive
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1") // serialization
             }
         }
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 api("androidx.activity:activity-compose:1.7.2")
                 api("androidx.appcompat:appcompat:1.6.1")
@@ -53,7 +55,7 @@ kotlin {
 
 android {
     compileSdk = (findProperty("android.compileSdk") as String).toInt()
-    namespace = "com.myapplication.common"
+    namespace = "com.firebasecomposemultiplatform.common"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
@@ -70,3 +72,9 @@ android {
         jvmToolchain(17)
     }
 }
+
+dependencies {
+    implementation(libs.material3)
+    testImplementation(libs.junit)
+}
+

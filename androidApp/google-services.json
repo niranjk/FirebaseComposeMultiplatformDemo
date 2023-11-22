@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:996250260004:android:6fd6c4bdfb3e04a1c43eb1",
         "android_client_info": {
-          "package_name": "kmp.niranjan.khatri.firebase.compose.demo"
+          "package_name": "com.firebasecomposemultiplatform"
         }
       },
       "oauth_client": [],

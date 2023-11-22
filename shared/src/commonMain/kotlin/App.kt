@@ -24,7 +24,8 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun App() {
     MaterialTheme {
-        var greetingText by remember { mutableStateOf("Firebase Compose Multiplatform!") }
+        // val app_name = stringResource(MR.strings.app_name)
+        var greetingText by remember { mutableStateOf("Hello World!") }
         var showImage by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             var list by remember { mutableStateOf(listOf<User>()) }
