@@ -15,8 +15,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.firebasecomposemultiplatform.shared.MR
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.firestore.firestore
+import dev.icerock.moko.resources.compose.stringResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
@@ -24,8 +26,8 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun App() {
     MaterialTheme {
-        // val app_name = stringResource(MR.strings.app_name)
-        var greetingText by remember { mutableStateOf("Hello World!") }
+        val app_name = stringResource(MR.strings.app_name)
+        var greetingText by remember { mutableStateOf("Hello World!\n$app_name") }
         var showImage by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             var list by remember { mutableStateOf(listOf<User>()) }

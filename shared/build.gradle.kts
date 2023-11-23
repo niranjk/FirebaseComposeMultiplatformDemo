@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     id("com.android.library")
     kotlin("plugin.serialization") version "1.9.0" // serialization plugin
+    id ("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
@@ -76,5 +77,9 @@ android {
 dependencies {
     implementation(libs.material3)
     testImplementation(libs.junit)
+    commonMainApi(libs.bundles.moko.resources)
 }
 
+multiplatformResources {
+    multiplatformResourcesPackage = "com.firebasecomposemultiplatform.shared" // required
+}

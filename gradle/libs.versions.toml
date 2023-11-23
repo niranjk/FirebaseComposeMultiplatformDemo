@@ -16,6 +16,9 @@ androidx-espresso-core = "3.5.1"
 kotlin = "1.9.10"
 junit = "4.13.2"
 material3 = "1.1.2"
+moko-version = "0.23.0"
+moko-viewmodel-version = "0.16.1"
+
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -35,8 +38,15 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 # For resource access
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+moko-classpath =  {group = "dev.icerock.moko", name = "resources-generator", version.ref = "moko-version"}
+moko-resource = {group = "dev.icerock.moko", name = "resources", version.ref = "moko-version"}
+moko-resource-compose = {group = "dev.icerock.moko", name = "resources-compose", version.ref = "moko-version"}
+
+[bundles]
+moko-resources = ["moko-resource", "moko-resource-compose"]
 
 [plugins]
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+moko-multiplatform = {id="dev.icerock.mobile.multiplatform-resources", version.ref = "moko-version"}
