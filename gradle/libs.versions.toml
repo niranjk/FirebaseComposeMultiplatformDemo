@@ -18,6 +18,9 @@ junit = "4.13.2"
 material3 = "1.1.2"
 moko-version = "0.23.0"
 moko-viewmodel-version = "0.16.1"
+decompose = "2.1.4-compose-experimental"
+essenty = "1.2.0"
+decompose-compose-experimental = "2.0.0-compose-experimental-alpha-02"
 
 
 [libraries]
@@ -41,6 +44,12 @@ material3 = { module = "androidx.compose.material3:material3", version.ref = "ma
 moko-classpath =  {group = "dev.icerock.moko", name = "resources-generator", version.ref = "moko-version"}
 moko-resource = {group = "dev.icerock.moko", name = "resources", version.ref = "moko-version"}
 moko-resource-compose = {group = "dev.icerock.moko", name = "resources-compose", version.ref = "moko-version"}
+
+#Decompose and Essenty
+decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose-compose-experimental" }
+decompose-compose-multiplatform = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decompose-compose-experimental" }
+decompose_extensions = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decompose-compose-experimental" }
+essenty_parcelable = {module = "com.arkivanov.essenty:parcelable", version.ref = "essenty"}
 
 [bundles]
 moko-resources = ["moko-resource", "moko-resource-compose"]

@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     kotlin("plugin.serialization") version "1.9.0" // serialization plugin
     id ("dev.icerock.mobile.multiplatform-resources")
+    id("kotlin-parcelize")
 }
 
 kotlin {
@@ -32,6 +33,10 @@ kotlin {
                 implementation("dev.gitlive:firebase-firestore:1.10.4") // gitlive
                 implementation("dev.gitlive:firebase-common:1.10.4")// gitlive
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1") // serialization
+                // Decompose & Essenty
+                implementation(libs.essenty.parcelable)
+                api(libs.decompose)
+                implementation(libs.decompose.compose.multiplatform)
             }
         }
         val androidMain by getting {
